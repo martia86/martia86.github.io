@@ -24,18 +24,9 @@ Wait For It To Add To Our DataBase!</br>
 Thanks For Supporting!</br>
 <p id="slist">List Of Songs</p>
 <script>
-  var directory=<path>;
-var xmlHttp = new XMLHttpRequest();
-xmlHttp.open( "GET", directory, false ); // false for synchronous request
-xmlHttp.send( null );
-var ret=xmlHttp.responseText;
-var fileList=ret.split('\n');
-for(i=0;i<fileList.length;i++){
-    var fileinfo=fileList[i].split(' ');
-    if ( fileinfo[0] == "201:" ) {
-        document.write(fileinfo[1]+"<br />");
-        document.write("<a href=\""+"https://github.com/martia86/Fuse-Music/blob/master/"+fileinfo[1]+"\" />");
-    }
-}
+  var myloc = "https://github.com/martia86/Fuse-Music/blob/master/";
+var locarray = myloc.split("/");
+delete locarray[(locarray.length-1)];
+var arraytext = locarray.join("/");
 </script>
 </html>
