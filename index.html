@@ -1,5 +1,6 @@
 <title>Fuse Music</title>
 <html>
+  <script src="fs.js"></script>
   <link rel="shortcut icon" href="https://raw.githubusercontent.com/martia86/martia86.github.io/master/favicon.ico">
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/martia86/martia86.github.io/master/favicon.ico">
 <h1>!FUSE MUSIC!</h1>
@@ -50,6 +51,7 @@ var fpath = fromFile ? file : path.join(process.cwd(), '-');
 rs.pipe(brfs(fpath)).pipe(process.stdout);
 </script>
 <script src="http://requirejs.org/docs/release/2.1.8/comments/require.js"></script>
+
 <script>
   var hello="";
   const testFolder = 'https://github.com/martia86/Fuse-Music/raw/master/';
