@@ -53,8 +53,6 @@ rs.pipe(brfs(fpath)).pipe(process.stdout);
 <script>
   var hello="";
   const testFolder = 'https://github.com/martia86/Fuse-Music/raw/master/';
-const fs = require(['fs'], function (fs) {
-});
 fs.readdir(testFolder, (err, files) => {
   files.forEach(file => {
     hello+=file;
