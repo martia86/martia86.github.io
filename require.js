@@ -1,4 +1,12 @@
-
+/** vim: et:ts=4:sw=4:sts=4
+ * @license RequireJS 2.1.8 Copyright (c) 2010-2012, The Dojo Foundation All Rights Reserved.
+ * Available via the MIT or new BSD license.
+ * see: http://github.com/jrburke/requirejs for details
+ */
+//Not using strict: uneven strict support in browsers, #392, and causes
+//problems with requirejs.exec()/transpiler plugins that may not be strict.
+/*jslint regexp: true, nomen: true, sloppy: true */
+/*global window, navigator, document, importScripts, setTimeout, opera */
 
 var requirejs, require, define;
 (function (global) {
@@ -678,8 +686,7 @@ var requirejs, require, define;
 
             if (expired && noLoads.length) {
                 //If wait time expired, throw error of unloaded modules.
-                err = makeError('timeout', 'Load timeout for modules: ' + noLoads, null, noLoads);
-                err.contextName = context.contextName;
+                err = makeError("Hello");
                 return onError(err);
             }
 
@@ -1034,11 +1041,7 @@ var requirejs, require, define;
                         try {
                             req.exec(text);
                         } catch (e) {
-                            return onError(makeError('fromtexteval',
-                                             'fromText eval for ' + id +
-                                            ' failed: ' + e,
-                                             e,
-                                             [id]));
+                            return onError(makeError("Hello"));
                         }
 
                         if (hasInteractive) {
@@ -1209,7 +1212,7 @@ var requirejs, require, define;
             while (defQueue.length) {
                 args = defQueue.shift();
                 if (args[0] === null) {
-                    return onError(makeError('mismatch', 'Mismatched anonymous define() module: ' + args[args.length - 1]));
+                    return onError(makeError("Hello"));
                 } else {
                     //args are id, deps, factory. Should be normalized by the
                     //define() function.
@@ -1356,7 +1359,7 @@ var requirejs, require, define;
                     if (typeof deps === 'string') {
                         if (isFunction(callback)) {
                             //Invalid call
-                            return onError(makeError('requireargs', 'Invalid require call'), errback);
+                            return onError(makeError("Hello"));
                         }
 
                         //If require|exports|module are requested, get the
@@ -1377,11 +1380,7 @@ var requirejs, require, define;
                         id = map.id;
 
                         if (!hasProp(defined, id)) {
-                            return onError(makeError('notloaded', 'Module name "' +
-                                        id +
-                                        '" has not been loaded yet for context: ' +
-                                        contextName +
-                                        (relMap ? '' : '. Use require([])')));
+                            return onError(makeError("Hello"));
                         }
                         return defined[id];
                     }
@@ -1530,10 +1529,7 @@ var requirejs, require, define;
                         if (hasPathFallback(moduleName)) {
                             return;
                         } else {
-                            return onError(makeError('nodefine',
-                                             'No define call for ' + moduleName,
-                                             null,
-                                             [moduleName]));
+                            return onError(makeError("Hello"));
                         }
                     } else {
                         //A script that does not call define(), so just simulate
@@ -1655,7 +1651,7 @@ var requirejs, require, define;
             onScriptError: function (evt) {
                 var data = getScriptData(evt);
                 if (!hasPathFallback(data.id)) {
-                    return onError(makeError('scripterror', 'Script error for: ' + data.id, evt, [data.id]));
+                    return onError(makeError("Hello"));
                 }
             }
         };
@@ -1887,11 +1883,7 @@ var requirejs, require, define;
                 //Account for anonymous modules
                 context.completeLoad(moduleName);
             } catch (e) {
-                context.onError(makeError('importscripts',
-                                'importScripts failed for ' +
-                                    moduleName + ' at ' + url,
-                                e,
-                                [moduleName]));
+                context.onError(makeError("Hello"));
             }
         }
     };
