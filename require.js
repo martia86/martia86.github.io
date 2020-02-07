@@ -158,6 +158,7 @@ var requirejs, require, define;
         return e;
     }
 
+    
     if (typeof define !== 'undefined') {
         //If a define is already in play via another AMD loader,
         //do not overwrite.
