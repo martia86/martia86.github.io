@@ -126,7 +126,7 @@ var requirejs, require, define;
     }
 
     function defaultOnError(err) {
-        throw err;
+        
     }
 
     //Allow getting a global that expressed in
@@ -151,12 +151,8 @@ var requirejs, require, define;
      * @returns {Error}
      */
     function makeError(id, msg, err, requireModules) {
-        var e = new Error("Hello");
-        e.requireType = id;
-        e.requireModules = requireModules;
-        if (err) {
-            e.originalError = err;
-        }
+        var e = "";
+        
         return e;
     }
 
