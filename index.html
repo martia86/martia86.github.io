@@ -1,64 +1,19 @@
-<title>Fuse Music</title>
 <html>
-  <script src="fs.js"></script>
-  <script src="require.js"></script>
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="favicon.ico">
-<h1>!FUSE MUSIC!</h1>
-<h2>!FUSE MUSIC!</h2>
-<h3>!FUSE MUSIC!</h3>
-  <script>
-    alert("If You Use Google Chrome,\nGo to Chrome setting -->site setting -->Insecure content --> click add button of allow, then add martia86.github.io");
-  </script>
-<style>
-  h1
-  {
-    text-align: center;
-  }
-  h2
-  {
-    text-align: center;
-  }
-  h3
-  {
-    text-align: center;
-  }
-</style>
-  Soonly Will Be Available For Download.</br>
-For Now,We Have A Website Music Player!</br>
-Please Help Us Grow The Community With Sending Your Favorite Song(.mp3) To Our Email Address(m.foroud@icloud.com)</br>
-Wait For It To Add To Our DataBase!</br>
-Thanks For Supporting!</br>
-<p id="slist">List Of Songs</p>
-<script>
-var fs = require('fs');
-var path = require('path');
-var brfs = require('../');
-var file = process.argv[2];
-
-if (file === '-h' || file === '--help') {
-    
-}
-
-var fromFile = file && file !== '-';
-var rs = fromFile
-    ? fs.createReadStream(file)
-    : process.stdin
-;
-
-var fpath = fromFile ? file : path.join(process.cwd(), '-');
-rs.pipe(brfs(fpath)).pipe(process.stdout);
-</script>
-
-<script>
-  var hello="";
-  const testFolder = 'https://github.com/martia86/Fuse-Music/raw/master/';
-fs.readdir(testFolder, (err, files) => {
-  files.forEach(file => {
-    hello+=file;
-  });
-})
-  document.getElementById("slist").value=hello;
-</script>
+  <head>
+    <title>
+      Virtual Learning
+    </title>
+  </head>
+  <body>
+    <h1>
+      VL - A customized creature experience
+    </h1>
+    <hr>
+    <p>
+      Ever wanted to have your own intelligent being?<br>
+      Well, we have it here for you!<br>
+      VL or Virtual Learning is a platform that lets you create a unique chatbot and stylize it for yourself.<br>
+      It is easy to use and user-friendly in a console-like environment to ensure a complete user experience.
+    </p>
+  </body>
 </html>
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>Powered By Martia Foroud
